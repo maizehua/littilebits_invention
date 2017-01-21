@@ -1,0 +1,28 @@
+<div class="container invention-details">
+  <div class="page-header">
+    <h1><%=h @invention.title %></h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="description"><%=h @invention.description %></div>
+
+      <% if @invention.username.present? %>
+        <div>
+          created by <strong><%=h @invention.username %></strong>
+        </div>
+      <% end %>
+
+      <% if @invention.email.present? %>
+        <div>email: <strong><%=h @invention.email %></strong></div>
+      <% end %>
+
+      <%= link_to "Back", inventions_url, class: "back-btn btn btn-default" %>
+    </div>
+
+    <div class="col-xs-6">
+      <% if @invention.material_list.present? %>
+        Materials used: <strong><%=h @invention.material_list.to_sentence %></strong>
+      <% end %>
+    </div>
+  </div>
+</div>

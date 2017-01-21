@@ -1,0 +1,36 @@
+// Place all the styles related to the inventions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-primary {
+  margin-top: 25px;
+}
+
+.upload-form {
+  width: 370px;
+  label {
+    width: 110px;
+    vertical-align: top;
+  }
+  input[type=text], textarea {
+    width: 100%;
+    border: 1px solid #9E9E9E;
+  }
+  .btn {
+    width: 48%;
+    margin-top: 20px;
+  }
+}
+
+.title {
+  font-size: 32px;
+}
+
+.description {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.invention-details .back-btn {
+  margin-top: 20px;
+  width: 120px;
+}

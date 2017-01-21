@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Inventions</h1>
+    <%= link_to(new_invention_path) do %>
+      <button class="btn btn-primary">Upload Your Invention</button>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% @inventions.each do |invention| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= render "inventions/invention_preview", invention: invention %>
+      </div>
+    <% end %>
+  </div>
+</div>
