@@ -1,24 +1,22 @@
-# README
+# Littlebits Invention
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is developed with rails 5, so Ruby 2.2.2+ is required.
 
-Things you may want to cover:
+To run it locally:
+- Clone the git repo of master branch<br>
+`git clone https://github.com/maizehua/littilebits_invention.git`
+- If bundler is already installed, go to next step. Otherwise, you can install bundler with `gem install bundler`
+- `cd littilebits_invention` and run `bundle install` 
+- initialize database with `bundle exec rake db:setup`
+- Install imagemagick so it can resize the uploaded image. On mac, you can run:
+`brew install imagemagick`
+- start the server with `bundle exec rails s`, and now you should be able to see the app running on `localhost:3000`
 
-* Ruby version
+It is deployed to:
 
-* System dependencies
+https://littilebits-invention.herokuapp.com/
 
-* Configuration
+I've generated some data for it.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Note that since I'm using a free heroku plan, the web app will sleep if it receives no traffic in a 30 minute period.
+Please expect a longer page load time for the first visit.
