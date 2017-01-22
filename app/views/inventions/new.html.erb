@@ -27,7 +27,11 @@
         </div>
 
         <div class="col-xs-6">
-          <%= react_component('AddMaterials') %>
+          <%= react_component('AddTags', type: 'materials', editable: true) %>
+        </div>
+
+        <div class="col-xs-6">
+          <%= react_component('AddTags', type: 'bits', editable: false) %>
         </div>
       </div>
 

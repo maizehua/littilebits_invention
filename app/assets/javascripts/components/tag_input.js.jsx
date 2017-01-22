@@ -1,4 +1,4 @@
-var MaterialsInput = React.createClass({
+var TagInput = React.createClass({
   addTag: function(name) {
     if (this.textInput.value === "") {
       this.textInput.value = name
@@ -12,16 +12,22 @@ var MaterialsInput = React.createClass({
   },
   render: function() {
     throttledHandleChange = _.throttle(this.handleChange, 200);
+    var opts = {};
+    if( !this.props.editable ) {
+      opts['readOnly'] = 'readOnly';
+    }
+    var type = this.props.type;
     return (
       <div className="form-group">
-        <label htmlFor="materials">Materials:</label>
+        <label htmlFor={type}>{type}:</label>
         <input
           type="text"
-          name="materials"
-          id="materials"
+          name={type}
+          id={type}
           className="form-control"
           onChange={throttledHandleChange}
           ref={(input) => { this.textInput = input; }}
+          {...opts}
         />
       </div>
     );

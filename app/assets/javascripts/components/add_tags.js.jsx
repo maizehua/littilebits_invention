@@ -1,4 +1,4 @@
-var AddMaterials = React.createClass({
+var AddTags = React.createClass({
   addTag: function(name) {
     this.textInput.addTag(name)
   },
@@ -8,11 +8,14 @@ var AddMaterials = React.createClass({
   render: function() {
     return (
       <div>
-        <MaterialsInput
+        <TagInput
+          type={this.props.type}
+          editable={this.props.editable}
           inputChanged={this.handleChange}
           ref={(input) => { this.textInput = input; }}
         />
-        <MaterialsTags
+        <TagsView
+          type={this.props.type}
           tagClicked={this.addTag}
           ref={(tags) => { this.tags = tags; }}
         />
