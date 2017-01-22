@@ -20,8 +20,15 @@
     </div>
 
     <div class="col-xs-6">
+      <% if @invention.bits.present? %>
+        <div class="bits-list">
+          Bits used: <strong><%=h @bits_list.to_sentence %></strong>
+        </div>
+      <% end %>
       <% if @invention.material_list.present? %>
-        Materials used: <strong><%=h @invention.material_list.to_sentence %></strong>
+        <div>
+          Materials used: <strong><%=h @invention.material_list.to_sentence %></strong>
+        </div>
       <% end %>
     </div>
   </div>

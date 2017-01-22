@@ -1,6 +1,9 @@
 <div class="container">
   <div class="page-header">
     <h1>Upload Your Invention</h1>
+    <% if flash[:error].present? %>
+      <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
+    <% end %>
   </div>
       <%= form_tag(url_for(action: 'create'), class: "upload-form") do %>
       <div class="row">
