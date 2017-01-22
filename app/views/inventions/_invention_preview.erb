@@ -1,4 +1,9 @@
 <%= link_to(invention_path(invention)) do %>
+  <% if invention.image? %>
+    <%= image_tag(invention.image.thumb.url) %>
+  <% else %>
+    <%= image_tag("no-image-placeholder.png") %>
+  <% end %>
   <h4><%= truncate(invention.title, length: 20) %></h4>
 <% end %>
 <p><%= truncate(invention.description, length: 200) %></p>

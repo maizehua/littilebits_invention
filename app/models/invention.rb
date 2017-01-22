@@ -1,3 +1,5 @@
+require 'carrierwave/orm/activerecord'
+
 class Invention < ApplicationRecord
   validates :title, :description, presence: true
 
@@ -5,4 +7,6 @@ class Invention < ApplicationRecord
 
   has_many :invention_bits
   has_many :bits, through: :invention_bits
+
+  mount_uploader :image, ImageUploader
 end

@@ -25,6 +25,11 @@ class InventionsController < ApplicationController
 
     add_bits_to_invention(bits_list, invention)
 
+    if params[:image].present?
+      invention.image = params[:image]
+      invention.save!
+    end
+
     if params[:materials].present?
       material_list = params[:materials].split(/[\s,]+/)
       invention.material_list = material_list
