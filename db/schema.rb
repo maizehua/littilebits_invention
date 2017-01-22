@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121180130) do
+ActiveRecord::Schema.define(version: 20170122063735) do
+
+  create_table "bits", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "invention_bits", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "invention_id"
+    t.integer  "bit_id"
+    t.index ["invention_id", "bit_id"], name: "index_invention_bits_on_invention_id_and_bit_id", unique: true
+  end
 
   create_table "inventions", force: :cascade do |t|
     t.string   "title",       limit: 255
