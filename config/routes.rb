@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   root 'inventions#index'
 
   resources :inventions, only: [:index, :show, :new, :create]
+
+  resources :materials, only: [:index]
+
+  get "materials/filter"
 end

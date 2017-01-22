@@ -6,7 +6,6 @@
 }
 
 .upload-form {
-  width: 370px;
   label {
     width: 110px;
     vertical-align: top;
@@ -33,4 +32,13 @@
 .invention-details .back-btn {
   margin-top: 20px;
   width: 120px;
+}
+
+.material-items {
+  .label {
+    font-size: 13px;
+    margin: 10px 5px 0;
+    display: inline-block;
+    cursor: pointer;
+  }
 }
