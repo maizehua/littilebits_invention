@@ -11,6 +11,7 @@ var MaterialsInput = React.createClass({
     this.props.inputChanged(this.textInput.value);
   },
   render: function() {
+    throttledHandleChange = _.throttle(this.handleChange, 200);
     return (
       <div className="form-group">
         <label htmlFor="materials">Materials:</label>
@@ -19,7 +20,7 @@ var MaterialsInput = React.createClass({
           name="materials"
           id="materials"
           className="form-control"
-          onChange={this.handleChange}
+          onChange={throttledHandleChange}
           ref={(input) => { this.textInput = input; }}
         />
       </div>
